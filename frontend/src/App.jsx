@@ -9,8 +9,9 @@ import AddTrip from './pages/AddTrip';
 import TripDetails from './pages/TripDetails';
 import AddPlace from './pages/AddPlace';
 import ProtectedRoute from './components/ProtectedRoute';
-import NavBar from './components/Navbar';
+// import NavBar from './NavBar';
 import './App.css';
+import NavBar from './NavBar.jsx';
 
 export default function App() {
   return (
