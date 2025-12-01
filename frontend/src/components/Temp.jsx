@@ -8,12 +8,12 @@ export default function NavBar(){
   const handleLogout = () => { logout(); navigate('/login'); };
 
   return (
-    <nav className="bg-gray-800 text-white p-4 flex justify-between relative left-120 top-20">
-      <div className="font-bold">TravelTracker</div>
+    <nav className="bg-gray-800 text-white justify-between h-20 items-center p-4 flex w-full">
+      <div className="font-bold text-4xl">TravelTracker</div>
       <div className="space-x-4">
         <Link to="/">Dashboard</Link>
         <Link to="/trips">Trips</Link>
-        {user ? <button onClick={handleLogout} className="ml-2 text-black">Logout</button> : <>
+        {user ? <button onClick={handleLogout} className="ml-2 text-white bg-red-500 p-2 rounded">Logout</button> : <>
           <Link to="/login">Login</Link>
           <Link to="/register">Register</Link>
         </>}

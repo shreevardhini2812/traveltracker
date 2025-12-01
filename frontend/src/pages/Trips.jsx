@@ -45,8 +45,8 @@ export default function Trips() {
   if (loading) return <div>Loading trips...</div>;
 
   return (
-    <div className='relative left-120 top-20'>
-      <h1 className="text-2xl mb-4">Trips</h1>
+    <div className='relative top-20'>
+      <h1 className="text-2xl p-3">Trips</h1>
       {trips.length === 0 ? (
         <div>No trips available.</div>
       ) : (
@@ -54,7 +54,7 @@ export default function Trips() {
           {trips.map((t) => (
             <div
               key={t._id}
-              className="bg-white p-3 rounded shadow flex justify-between items-center"
+              className="bg-white p-3 rounded shadow flex-col justify-between items-center"
             >
               <div>
                 <div className="font-bold text-lg">{t.title}</div>
@@ -66,13 +66,13 @@ export default function Trips() {
               <div className="space-x-2 flex">
                 <Link
                   to={`/trips/${t._id}`}
-                  className="px-2 py-2 bg-blue-300 text-white rounded"
+                  className="px-2 py-2 bg-blue-300 text-black rounded"
                 >
                   Open
                 </Link>
                 <button
                   onClick={() => handleDelete(t._id)}
-                  className="px-3 py-1 text-black border rounded"
+                  className="px-3 py-1 text-white cursor-pointer bg-red-500 rounded"
                 >
                   Delete
                 </button>

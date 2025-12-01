@@ -17,7 +17,7 @@ export default function AddTrip(){
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded shadow relative left-120 top-20">
+    <div className="max-w-md mx-auto bg-white p-6 rounded shadow relative top-20">
       <h2 className="text-xl mb-4">Add Trip</h2>
       <form onSubmit={onSubmit} className="space-y-3">
         <input name="title" placeholder="Trip title" value={form.title} onChange={onChange} className="w-full p-2 border rounded" />

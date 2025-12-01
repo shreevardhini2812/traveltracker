@@ -44,8 +44,8 @@ export default function TripDetails(){
   if (!trip) return <div>Loading...</div>;
 
   return (
-    <div className='relative left-120 top-20'>
-      <h1 className="text-2xl mb-2">{trip.title}</h1>
+    <div className='relative top-20 p-3'>
+      <h1 className="text-3xl mb-2">{trip.title}</h1>
       <div className="mb-4 text-sm">
         {trip.startDate ? new Date(trip.startDate).toLocaleDateString() : '—'} — 
         {trip.endDate ? new Date(trip.endDate).toLocaleDateString() : '—'}
@@ -59,11 +59,11 @@ export default function TripDetails(){
         </Link>
       </div>
 
-      <h2 className="text-xl mb-2">Places</h2>
+      <h2 className="text-3xl p-3">Places</h2>
 
-      <div className="space-y-3">
+      <div className='flex gap-5'>
         {places.map((p) => (
-          <div key={p._id} className="bg-white p-3 rounded shadow flex justify-between">
+          <div key={p._id} className="bg-white p-3 rounded shadow flex flex-col justify-between gap-10">
             <div>
               <div className="font-bold">{p.name}</div>
               <div className="text-sm">{p.city}{p.country ? ', ' + p.country : ''}</div>
@@ -71,12 +71,12 @@ export default function TripDetails(){
               <div className="text-sm">{p.notes}</div>
             </div>
 
-            <div className="space-x-2">
+            <div className="">
               {/* <a href={p.photoUrl || '#'} target="_blank" rel="noreferrer" className="px-3 py-1 bg-gray-600 text-white rounded">
                 Photo
               </a> */}
 
-              <button onClick={() => handleDeletePlace(p._id)} className="px-3 py-1 bg-red-500 text-black rounded">
+              <button onClick={() => handleDeletePlace(p._id)} className="px-3 py-1 cursor-pointer bg-red-500 text-black rounded">
                 Delete
               </button>
             </div>

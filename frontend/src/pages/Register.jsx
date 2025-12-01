@@ -22,8 +22,8 @@ export default function Register(){
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded shadow relative left-120 top-20">
-      <h2 className="text-xl mb-4">Register</h2>
+    <div className="max-w-md mx-auto bg-white p-6 rounded shadow relative top-20">
+      <h2 className="text-2xl mb-4">Register</h2>
       <form onSubmit={onSubmit} className="space-y-3">
         <input name="name" placeholder="Name" value={form.name} onChange={onChange} className="w-full p-2 border rounded" />
         <input name="email" placeholder="Email" value={form.email} onChange={onChange} className="w-full p-2 border rounded" />

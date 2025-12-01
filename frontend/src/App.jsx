@@ -15,9 +15,9 @@ import NavBar from './components/Temp';
 export default function App() {
   return (
     <AuthProvider>
-      <div className="min-h-screen bg-gray-100">
+      <div className="">
         <NavBar />
-        <div className="container mx-auto p-4">
+        <div className=''>
           <Routes>
             <Route path="/" element={<Dashboard/>} />
             <Route path="/trips" element={<ProtectedRoute><Trips /></ProtectedRoute>} />
