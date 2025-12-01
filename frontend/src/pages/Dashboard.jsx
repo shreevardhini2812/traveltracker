@@ -5,14 +5,22 @@ import { Link } from 'react-router-dom';
 export default function Dashboard(){
   const [trips, setTrips] = useState([]);
   useEffect(() => {
-    const fetch = async () => {
-      try {
-        const res = await API.get('/api/trips');
-        setTrips(res.data);
-      } catch (err) { console.error(err); }
-    };
-    fetch();
-  }, []);
+  const fetchData = async () => {
+    const token = localStorage.getItem("token");
+    if (!token) return; // 👈 Prevents 401
+
+    try {
+      const res = await API.get("/api/trips", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setTrips(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  fetchData();
+}, []);
 
   return (
     <div>
