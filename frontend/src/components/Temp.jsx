@@ -9,7 +9,7 @@ export default function NavBar(){
 
   return (
     <nav className="bg-gray-800 text-white justify-between h-20 items-center p-4 flex w-full">
-      <div className="font-bold text-4xl">TravelTracker</div>
+      <div className="font-bold md:text-4xl">TravelTracker</div>
       <div className="space-x-4">
         <Link to="/">Dashboard</Link>
         <Link to="/trips">Trips</Link>

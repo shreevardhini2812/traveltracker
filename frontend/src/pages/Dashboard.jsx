@@ -24,14 +24,14 @@ export default function Dashboard(){
 
   return (
     <div>
-      <h1 className="text-2xl mb-4 relative top-50 left-150 w-30">Dashboard</h1>
-      <div className="mb-4 relative top-55 left-138 w-65">
+      <h1 className="text-2xl mb-4 md:relative top-50 md:left-150 w-30">Dashboard</h1>
+      <div className="mb-4 md:relative top-55 md:left-138 w-65">
         <Link to="/trips" className="px-4 py-2 bg-blue-300 text-black rounded">View Trips</Link>
         <Link to="/add-trip" className="ml-2 px-4 py-2 bg-green-300 text-black rounded">Add Trip</Link>
       </div>
       <div className='relative top-10 left-20 rounded-full w-100 '><img src='/image.png' width='400' height='200' /></div>
 
-      <div className=" relative left-220 w-60 bottom-55 flex flex-col gap-4">
+      <div className="md:relative md:left-220 w-60 bottom-55 flex flex-col gap-4">
         {trips.slice(0,6).map(t => (
           <div key={t._id} className="bg-white p-4 rounded shadow">
             <div className="font-bold">{t.title}</div>
