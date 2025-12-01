@@ -8,22 +8,29 @@ export default function Trips() {
 
   // Fetch trips from backend
   useEffect(() => {
-    const fetchTrips = async () => {
-      try {
-        const token = localStorage.getItem('token'); // JWT token
-        const res = await API.get('/api/trips', {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-        setTrips(res.data);
-      } catch (err) {
-        console.error('Error fetching trips:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchTrips = async () => {
+    const token = localStorage.getItem('token');
 
-    fetchTrips();
-  }, []);
+    // 🚫 If no token → don't call API → prevents 401
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+
+    try {
+      const res = await API.get('/api/trips', {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setTrips(res.data);
+    } catch (err) {
+      console.error('Error fetching trips:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchTrips();
+}, []);
 
   // Delete trip
   const handleDelete = async (tripId) => {
